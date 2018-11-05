@@ -1,0 +1,6 @@
+framework module Pods_GlocalUITests {
+  umbrella header "Pods-GlocalUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

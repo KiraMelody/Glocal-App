@@ -1,0 +1,6 @@
+framework module MGDrawingSlate {
+  umbrella header "MGDrawingSlate-umbrella.h"
+
+  export *
+  module * { export * }
+}

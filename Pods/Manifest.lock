@@ -1,0 +1,38 @@
+PODS:
+  - Alamofire (4.7.3)
+  - MGDrawingSlate (0.0.1)
+  - PKHUD (5.2.0)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
+  - SnapKit (4.2.0)
+  - TextFieldEffects (1.5.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - MGDrawingSlate
+  - PKHUD
+  - SDWebImage
+  - SnapKit
+  - TextFieldEffects
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - MGDrawingSlate
+    - PKHUD
+    - SDWebImage
+    - SnapKit
+    - TextFieldEffects
+
+SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  MGDrawingSlate: a7e2ff0546613c17549cb989ca030bff2ca93704
+  PKHUD: dd5357ac65f26115c35c4a68e9b328053326c5fe
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  TextFieldEffects: 7d372f58aeaf9acd9626bbf962680aef926b085d
+
+PODFILE CHECKSUM: 10eaa0afb1ec580db4810089d36ed52fa793582f
+
+COCOAPODS: 1.6.0.beta.2
