@@ -12,6 +12,7 @@ import TextFieldEffects
 
 class RegisterViewController: UIViewController {
     
+    var backButton: UIButton!
     var logoImage: UIImageView!
     var appLabel: UILabel!
     var usernameField: HoshiTextField!
@@ -30,6 +31,12 @@ class RegisterViewController: UIViewController {
         width = view.frame.width
         height = view.frame.height
         print(width, height)
+        
+        var back = UIImage(named: "back")
+        back = back?.withRenderingMode(.alwaysOriginal)
+        backButton = UIButton()
+        backButton.setImage(back, for: .normal)
+        backButton.addTarget(self, action: #selector(backToLast), for: .touchUpInside)
         
         logoImage = UIImageView()
         logoImage.image = UIImage(named: "global")
@@ -91,6 +98,7 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
         initialize()
         
+        self.view.addSubview(backButton)
         self.view.addSubview(logoImage)
         self.view.addSubview(appLabel)
         self.view.addSubview(usernameField)
@@ -103,8 +111,14 @@ class RegisterViewController: UIViewController {
 //        self.view.addSubview(linkedinButton)
 //        self.view.addSubview(instagramButton)
         
-        self.view.backgroundColor = ColorandFontTable.lightGreen
+        let bgImage = UIImage(cgImage: UIImage(named: "wall")!.cgImage!, scale: 1000 / height, orientation: .up)
+        self.view.backgroundColor = UIColor(patternImage: bgImage)
         
+        backButton.snp.makeConstraints{(make) in
+            make.left.equalTo(view).offset(20)
+            make.top.equalTo(view).offset(50)
+            make.height.equalTo(24)
+        }
         logoImage.snp.makeConstraints { (make) in
             make.top.equalTo(self.view).offset(100)
             make.centerX.equalTo(self.view)

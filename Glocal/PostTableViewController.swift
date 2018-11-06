@@ -23,11 +23,13 @@ class PostTableViewController: UITableViewController {
         self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.navigationBar.barTintColor = ColorandFontTable.darkGray
         self.navigationController?.navigationBar.isTranslucent = false
-        let backButton = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        var back = UIImage(named: "back")
+        back = back?.withRenderingMode(.alwaysOriginal)
+        let backButton = UIBarButtonItem(image: back, style: .plain, target: self, action: #selector(backToLast))
         self.navigationItem.leftBarButtonItem = backButton
         var envelope = UIImage(named: "envelope")
         envelope = envelope?.withRenderingMode(.alwaysOriginal)
-        let messageButton = UIBarButtonItem(image: envelope, style: .plain, target: self, action: nil)
+        let messageButton = UIBarButtonItem(image: envelope, style: .plain, target: self, action: #selector(backToLast))
         self.navigationItem.rightBarButtonItem = messageButton
         
         tableView.estimatedRowHeight = 100
@@ -94,6 +96,8 @@ class PostTableViewController: UITableViewController {
         cell.selectionStyle = .none
         return cell
     }
-
+    @objc func backToLast() {
+        let _ = self.navigationController?.popViewController(animated: true)
+    }
 
 }

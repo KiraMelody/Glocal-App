@@ -9,22 +9,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>DBProfileViewController-DBProfileViewController.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>DBProfileViewController.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>FXBlurView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>MGDrawingSlate.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>NGOSegmentControl.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

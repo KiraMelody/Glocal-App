@@ -9,11 +9,13 @@
 import UIKit
 import SnapKit
 import TextFieldEffects
+import NGOSegmentControl
 
 class LoginViewController: UIViewController {
 
     var logoImage: UIImageView!
     var appLabel: UILabel!
+    var segmentControl: NGOSegmentControl!
     var usernameField: HoshiTextField!
     var passwordField: HoshiTextField!
     var loginButton: UIButton!
@@ -38,6 +40,15 @@ class LoginViewController: UIViewController {
         appLabel.text = "Glocal"
         appLabel.textAlignment = .center
         appLabel.textColor = ColorandFontTable.darkGray
+        
+        segmentControl = NGOSegmentControl()
+        segmentControl.backgroundColor = ColorandFontTable.primaryGreen
+        segmentControl.tintColor = ColorandFontTable.primaryGreen
+        segmentControl.selectedBackgroundColor = ColorandFontTable.midGreen
+//        segmentControl.buttonTitleColor = ColorandFontTable.primaryGreen
+        segmentControl.firstSegmentText = "Influencer"
+        segmentControl.secondSegmentText = "Company"
+        segmentControl.selectedButton = NGOSegmentControlSelected.left
         
         usernameField = HoshiTextField()
         usernameField.placeholder = "Username"
@@ -88,6 +99,7 @@ class LoginViewController: UIViewController {
         
         self.view.addSubview(logoImage)
         self.view.addSubview(appLabel)
+        self.view.addSubview(segmentControl)
         self.view.addSubview(usernameField)
         self.view.addSubview(passwordField)
         self.view.addSubview(loginButton)
@@ -97,7 +109,8 @@ class LoginViewController: UIViewController {
         self.view.addSubview(linkedinButton)
         self.view.addSubview(instagramButton)
         
-        self.view.backgroundColor = ColorandFontTable.lightGreen
+        let bgImage = UIImage(cgImage: UIImage(named: "wall")!.cgImage!, scale: 1000 / height, orientation: .up)
+        self.view.backgroundColor = UIColor(patternImage: bgImage)
         
         logoImage.snp.makeConstraints { (make) in
             make.top.equalTo(self.view).offset(100)
@@ -109,8 +122,14 @@ class LoginViewController: UIViewController {
             make.top.equalTo(logoImage.snp.bottom).offset(10)
             make.centerX.equalTo(self.view)
         }
+        segmentControl.snp.makeConstraints { (make) in
+            make.top.equalTo(appLabel.snp.bottom).offset(20)
+            make.centerX.equalTo(self.view)
+            make.height.equalTo(self.view).multipliedBy(0.05)
+            make.width.equalTo(self.view).multipliedBy(0.8)
+        }
         usernameField.snp.makeConstraints { (make) in
-            make.top.equalTo(appLabel.snp.bottom).offset(50)
+            make.top.equalTo(segmentControl.snp.bottom)
             make.centerX.equalTo(self.view)
             make.height.equalTo(self.view).multipliedBy(0.1)
             make.width.equalTo(self.view).multipliedBy(0.7)

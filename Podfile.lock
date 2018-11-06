@@ -1,9 +1,7 @@
 PODS:
   - Alamofire (4.7.3)
-  - DBProfileViewController (2.0.2):
-    - FXBlurView (~> 1.6.4)
-  - FXBlurView (1.6.4)
   - MGDrawingSlate (0.0.1)
+  - NGOSegmentControl (1.0.1)
   - PKHUD (5.2.0)
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
@@ -13,8 +11,8 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - DBProfileViewController
   - MGDrawingSlate
+  - NGOSegmentControl
   - PKHUD
   - SDWebImage
   - SnapKit
@@ -23,9 +21,8 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
-    - DBProfileViewController
-    - FXBlurView
     - MGDrawingSlate
+    - NGOSegmentControl
     - PKHUD
     - SDWebImage
     - SnapKit
@@ -33,14 +30,13 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
-  DBProfileViewController: a2da39408911b0a732ac04512e999468d39f0802
-  FXBlurView: db786c2561cb49a09ae98407f52460096ab8a44f
   MGDrawingSlate: a7e2ff0546613c17549cb989ca030bff2ca93704
+  NGOSegmentControl: 50c936043e9d2df6ba8fc9a332f9737febb8fd03
   PKHUD: dd5357ac65f26115c35c4a68e9b328053326c5fe
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   TextFieldEffects: 7d372f58aeaf9acd9626bbf962680aef926b085d
 
-PODFILE CHECKSUM: ebf980fc5ccba147aab4444fc7b6b93ca361b57b
+PODFILE CHECKSUM: 7632f38a6b084125ba5e58c4d732654b87e40447
 
 COCOAPODS: 1.6.0.beta.2

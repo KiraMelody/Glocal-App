@@ -10,6 +10,7 @@ target 'Glocal' do
   pod 'MGDrawingSlate'
   pod 'SDWebImage'
   pod 'TextFieldEffects'
+  pod 'NGOSegmentControl'
 
   # Pods for Glocal
 

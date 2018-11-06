@@ -11,6 +11,7 @@ import UIKit
 
 public class ColorandFontTable {
     static let primaryGreen = UIColor(red: 88 / 255, green: 202 / 255, blue: 89 / 255, alpha: 1)
+    static let midGreen = UIColor(red: 60 / 255, green: 179 / 255, blue: 113 / 255, alpha: 1)
     static let tintGreen = UIColor(red: 49 / 255, green: 153 / 255, blue: 51 / 255, alpha: 1)
     static let lightGreen = UIColor(red: 226 / 255, green: 243 / 255, blue: 226 / 255, alpha: 1)
     static let groundGreen = UIColor(red: 253 / 255, green: 222 / 255, blue: 227 / 255, alpha: 1)
