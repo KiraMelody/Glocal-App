@@ -13,13 +13,13 @@ public class Account {
     var username: String
     var email: String?
     var signature: String?
-    var avatar: URL?
-    var background: URL?
+    var avatar: String?
+    var background: String?
     init(username: String)
     {
         self.username = username
     }
-    init(username: String, email: String?, signature: String?, avatar: URL?, background: URL?)
+    init(username: String, email: String?, signature: String?, avatar: String?, background: String?)
     {
         self.username = username
         self.email = email

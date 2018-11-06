@@ -68,7 +68,7 @@ class RegisterViewController: UIViewController {
         registerButton = UIButton(type: .roundedRect)
         registerButton.setTitle("Sign Up", for: .normal)
         registerButton.titleLabel?.font = UIFont.systemFont(ofSize: 20)
-        //        registerButton.addTarget(self, action: #selector(LoginViewController.jumpToRegister), for: .touchUpInside)
+        registerButton.addTarget(self, action: #selector(RegisterViewController.jumpToProfile), for: .touchUpInside)
         registerButton.backgroundColor = ColorandFontTable.primaryGreen
         registerButton.setTitleColor(.white, for: .normal)
         registerButton.layer.cornerRadius = 15
@@ -90,8 +90,6 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initialize()
-        
-        self.title = "Sign Up"
         
         self.view.addSubview(logoImage)
         self.view.addSubview(appLabel)
@@ -124,19 +122,19 @@ class RegisterViewController: UIViewController {
             make.width.equalTo(self.view).multipliedBy(0.7)
         }
         emailField.snp.makeConstraints { (make) in
-            make.top.equalTo(usernameField.snp.bottom).offset(10)
+            make.top.equalTo(usernameField.snp.bottom).offset(5)
             make.centerX.equalTo(self.view)
             make.height.equalTo(self.view).multipliedBy(0.1)
             make.width.equalTo(self.view).multipliedBy(0.7)
         }
         passwordField.snp.makeConstraints { (make) in
-            make.top.equalTo(emailField.snp.bottom).offset(10)
+            make.top.equalTo(emailField.snp.bottom).offset(5)
             make.centerX.equalTo(self.view)
             make.height.equalTo(self.view).multipliedBy(0.1)
             make.width.equalTo(self.view.snp.width).multipliedBy(0.7)
         }
         conpasswordField.snp.makeConstraints { (make) in
-            make.top.equalTo(passwordField.snp.bottom).offset(10)
+            make.top.equalTo(passwordField.snp.bottom).offset(5)
             make.centerX.equalTo(self.view)
             make.height.equalTo(self.view).multipliedBy(0.1)
             make.width.equalTo(self.view.snp.width).multipliedBy(0.7)
@@ -221,6 +219,11 @@ class RegisterViewController: UIViewController {
     
     @objc func backToLast() {
         let _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func jumpToProfile() {
+        let avc = ProfileViewController()
+        self.navigationController?.pushViewController(avc, animated: true)
     }
     
 //    func recheck() {

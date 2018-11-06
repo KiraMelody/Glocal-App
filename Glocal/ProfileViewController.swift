@@ -27,17 +27,6 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate
     var signatureLabel: UILabel!
     var signatureContentLabel: UILabel?
     
-    var line0: UIImageView!
-    
-    var albumView: UIView!
-    var albumLabel: UILabel!
-    var albumFrame0: UIImageView!
-    var albumFrame1: UIImageView!
-    var albumFrame2: UIImageView!
-    var albumArrow: UIImageView!
-    
-    var line1: UIImageView!
-    
     var settingsButton: UIButton!
     var backButton: UIButton!
     
@@ -54,30 +43,32 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate
     {
         width = view.frame.width
         height = view.frame.height
-        if isSetting {
-            user = Account(username: UserDefaults.standard.value(forKey: "USERNAME") as! String)
-            user.email = UserDefaults.standard.value(forKey: "EMAIL") as! String?
-            user.signature = UserDefaults.standard.value(forKey: "SIGNATURE") as! String?
-            if (UserDefaults.standard.value(forKey: "AVATAR") != nil)
-            {
-                //user.avatar = URL(string: (UserDefaults.standard.value(forKey: "AVATAR") as! String))
-            }
-            if (UserDefaults.standard.value(forKey: "BACKGROUND") != nil)
-            {
-                //user.background = URL(string: UserDefaults.standard.value(forKey: "BACKGROUND") as! String)
-            }
-        }
+//        if isSetting {
+//            user = Account(username: UserDefaults.standard.value(forKey: "USERNAME") as! String)
+//            user.email = UserDefaults.standard.value(forKey: "EMAIL") as! String?
+//            user.signature = UserDefaults.standard.value(forKey: "SIGNATURE") as! String?
+//            if (UserDefaults.standard.value(forKey: "AVATAR") != nil)
+//            {
+//                //user.avatar = URL(string: (UserDefaults.standard.value(forKey: "AVATAR") as! String))
+//            }
+//            if (UserDefaults.standard.value(forKey: "BACKGROUND") != nil)
+//            {
+//                //user.background = URL(string: UserDefaults.standard.value(forKey: "BACKGROUND") as! String)
+//            }
+//        }
+        user = Account(username: "Jiaqi", email: "jessietong96@gamil.com", signature: "good", avatar: "icon", background: "LoginView_Background")
         wallpaperView = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height * 0.3555))
+        wallpaperView.image = UIImage(named: "wall")
         wallpaperView.contentMode = .scaleAspectFill
         wallpaperView.clipsToBounds = true
-        if user.background != nil
-        {
-            wallpaperView.sd_setImage(with: user.background, placeholderImage: #imageLiteral(resourceName: "Profile_Background"))
-        }
-        else
-        {
-            wallpaperView.image = #imageLiteral(resourceName: "Profile_Background")
-        }
+//        if user.background != nil
+//        {
+//            wallpaperView.sd_setImage(with: user.background, placeholderImage: #imageLiteral(resourceName: "Profile_Background"))
+//        }
+//        else
+//        {
+//            wallpaperView.image = #imageLiteral(resourceName: "Profile_Background")
+//        }
         
         scrollView = UIScrollView(frame: view.frame)
         scrollView.delegate = self
@@ -90,14 +81,15 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate
         
         iconView = UIImageView(frame: CGRect(x: width / 2 - height * 0.08625, y: height * 0.26925, width: height * 0.1725, height: height * 0.1725))
         iconView.contentMode = .scaleAspectFill
-        if user.avatar != nil
-        {
-            iconView.sd_setImage(with: user.avatar, placeholderImage: #imageLiteral(resourceName: "whatwhat_pc_icons2"))
-        }
-        else
-        {
-            iconView.image = #imageLiteral(resourceName: "icon")
-        }
+        iconView.image = UIImage(named: user.avatar ?? "default")
+//        if user.avatar != nil
+//        {
+//            iconView.sd_setImage(with: user.avatar, placeholderImage: #imageLiteral(resourceName: "whatwhat_pc_icons2"))
+//        }
+//        else
+//        {
+//            iconView.image = #imageLiteral(resourceName: "icon")
+//        }
         let imageLayer = iconView.layer
         imageLayer.masksToBounds = true
         imageLayer.cornerRadius = iconView.frame.size.height / 2
@@ -105,89 +97,37 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate
         usernameLabel = UILabel()
         usernameLabel.text = user.username
         usernameLabel.textAlignment = .center
-        usernameLabel.font = .systemFont(ofSize: height * 0.036)
+        usernameLabel.font = .systemFont(ofSize: 20)
         
-        signatureView = UIView()
-        signatureView.backgroundColor = ColorandFontTable.transparent
-        let longPress0 = UILongPressGestureRecognizer(target: self, action: #selector(holdingSignature(sender:)))
-        longPress0.minimumPressDuration = 0.1
-        signatureView.addGestureRecognizer(longPress0)
         signatureLabel = UILabel()
-        signatureLabel.text = "签名"
+        signatureLabel.text = "influence and earn"
         signatureLabel.textColor = ColorandFontTable.textGray1
         signatureLabel.textAlignment = .center
-        signatureLabel.font = .systemFont(ofSize: 20)
-        signatureContentLabel = UILabel()
-        if user.signature != nil
-        {
-            signatureContentLabel!.text = user.signature!
-        }
-        else
-        {
-            signatureContentLabel!.text = "默认签名"
-        }
-        signatureContentLabel!.font = .systemFont(ofSize: 18)
-        signatureContentLabel!.lineBreakMode = .byTruncatingTail
-        line0 = UIImageView()
-        line0.image = #imageLiteral(resourceName: "ProfileView_Line")
+        signatureLabel.font = .systemFont(ofSize: 14)
         
-        albumView = UIView()
-        albumView.backgroundColor = ColorandFontTable.transparent
-        let longPress1 = UILongPressGestureRecognizer(target: self, action: #selector(holdingAlbum(sender:)))
-        longPress1.minimumPressDuration = 0.1
-        albumView.addGestureRecognizer(longPress1)
-        albumLabel = UILabel()
-        albumLabel.text = "相册"
-        albumLabel.textColor = ColorandFontTable.textGray1
-        albumLabel.textAlignment =  .center
-        albumLabel.font = .systemFont(ofSize: 20)
-        albumFrame0 = UIImageView()
-        albumFrame0.image = #imageLiteral(resourceName: "表情包1")
-        albumFrame0.backgroundColor = ColorandFontTable.fillGray
-        albumFrame0.layer.borderWidth = 1
-        albumFrame0.layer.borderColor = ColorandFontTable.borderGray.cgColor
-        albumFrame0.contentMode = .scaleAspectFit
-        albumFrame1 = UIImageView()
-        albumFrame1.image = #imageLiteral(resourceName: "表情包2")
-        albumFrame1.backgroundColor = ColorandFontTable.fillGray
-        albumFrame1.layer.borderWidth = 1
-        albumFrame1.layer.borderColor = ColorandFontTable.borderGray.cgColor
-        albumFrame1.contentMode = .scaleAspectFit
-        albumFrame2 = UIImageView()
-        albumFrame2.image = #imageLiteral(resourceName: "表情包3")
-        albumFrame2.backgroundColor = ColorandFontTable.fillGray
-        albumFrame2.layer.borderWidth = 1
-        albumFrame2.layer.borderColor = ColorandFontTable.borderGray.cgColor
-        albumFrame2.contentMode = .scaleAspectFit
-        albumArrow = UIImageView()
-        albumArrow.image = #imageLiteral(resourceName: "ProfileView_Arrow")
-        albumArrow.contentMode = .scaleAspectFit
+//        settingsButton = UIButton(type: .roundedRect)
+//        settingsButton.layer.cornerRadius = 5
+//        if isSetting {
+//            settingsButton.setTitle("退出账号", for: .normal)
+//            settingsButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
+//        } else if isStranger {
+//            settingsButton.setTitle("加为好友", for: .normal)
+//            settingsButton.addTarget(self, action: #selector(addFriend), for: .touchUpInside)
+//        } else {
+//            settingsButton.setTitle("删除好友", for: .normal)
+//            settingsButton.addTarget(self, action: #selector(deleteFriend), for: .touchUpInside)
+//        }
+//
+//        settingsButton.setTitleColor(.white, for: .normal)
+//        settingsButton.backgroundColor = ColorandFontTable.tintGreen
+//        settingsButton.titleLabel?.font = .systemFont(ofSize: height * 0.03)
+//        let tap = UITapGestureRecognizer(target: self, action: #selector(tapped(sender:)))
+//        view.addGestureRecognizer(tap)
         
-        line1 = UIImageView()
-        line1.image = #imageLiteral(resourceName: "ProfileView_Line")
-        
-        settingsButton = UIButton(type: .roundedRect)
-        settingsButton.layer.cornerRadius = 5
-        if isSetting {
-            settingsButton.setTitle("退出账号", for: .normal)
-            settingsButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
-        } else if isStranger {
-            settingsButton.setTitle("加为好友", for: .normal)
-            settingsButton.addTarget(self, action: #selector(addFriend), for: .touchUpInside)
-        } else {
-            settingsButton.setTitle("删除好友", for: .normal)
-            settingsButton.addTarget(self, action: #selector(deleteFriend), for: .touchUpInside)
-        }
-        
-        settingsButton.setTitleColor(.white, for: .normal)
-        settingsButton.backgroundColor = ColorandFontTable.tintGreen
-        settingsButton.titleLabel?.font = .systemFont(ofSize: height * 0.03)
-        let tap = UITapGestureRecognizer(target: self, action: #selector(tapped(sender:)))
-        view.addGestureRecognizer(tap)
-        
-        backButton = UIButton(frame: CGRect(x: 10, y: 20, width: 20, height: 20))
-        backButton.setImage(#imageLiteral(resourceName: "ProfileView_Back"), for: .normal)
-        backButton.isUserInteractionEnabled = true
+        var back = UIImage(named: "back")
+        back = back?.withRenderingMode(.alwaysOriginal)
+        backButton = UIButton()
+        backButton.setImage(back, for: .normal)
         backButton.addTarget(self, action: #selector(backToLast), for: .touchUpInside)
     }
     
@@ -200,117 +140,43 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate
         
         initialize()
         
-        loadRecentThreePhotos()
+//        loadRecentThreePhotos()
         
         scrollView.addSubview(usernameLabel)
-        scrollView.addSubview(signatureView)
         scrollView.addSubview(signatureLabel)
-        scrollView.addSubview(signatureContentLabel!)
-        scrollView.addSubview(line0)
-        scrollView.addSubview(albumView)
-        scrollView.addSubview(albumLabel)
-        scrollView.addSubview(albumFrame0)
-        scrollView.addSubview(albumFrame1)
-        scrollView.addSubview(albumFrame2)
-        scrollView.addSubview(albumArrow)
-        scrollView.addSubview(line1)
-        scrollView.addSubview(settingsButton)
+        
+//        scrollView.addSubview(settingsButton)
 
         view.addSubview(scrollView)
         view.addSubview(wallpaperView)
         view.addSubview(iconView)
         view.addSubview(backButton)
+        
+        backButton.snp.makeConstraints{(make) in
+            make.left.equalTo(view).offset(20)
+            make.top.equalTo(view).offset(50)
+            make.height.equalTo(24)
+        }
+        
         usernameLabel.snp.makeConstraints{(make) in
             make.centerX.equalTo(scrollView)
             make.top.equalTo(scrollView).offset(height * 0.456)
             make.height.equalTo(height * 0.036)
         }
         
-        
-        signatureView.snp.makeConstraints{(make) in
-            make.left.equalTo(scrollView)
-            make.width.equalTo(width)
-            make.top.equalTo(scrollView).offset(height * 0.564)
-            make.height.equalTo(height * 0.057)
-        }
-        
         signatureLabel.snp.makeConstraints{(make) in
-            make.left.equalTo(scrollView)
-            make.width.equalTo(width * 0.224)
-            make.top.equalTo(signatureView)
-            make.bottom.equalTo(signatureView)
+            make.centerX.equalTo(scrollView)
+            make.height.equalTo(height * 0.036)
+            make.top.equalTo(usernameLabel.snp.bottom).offset(5)
         }
         
-        signatureContentLabel!.snp.makeConstraints{(make) in
-            make.left.equalTo(scrollView).offset(width * 0.23)
-            make.width.equalTo(width * 0.77)
-            make.top.equalTo(signatureView)
-            make.bottom.equalTo(signatureView)
-        }
         
-        line0.snp.makeConstraints{(make) in
-            make.top.equalTo(scrollView).offset(height * 0.6315)
-            make.left.equalTo(signatureLabel.snp.right)
-            make.width.equalTo(width * 0.776)
-            make.height.equalTo(2)
-        }
-        
-        albumView.snp.makeConstraints{(make) in
-            make.left.equalTo(scrollView.snp.left)
-            make.width.equalTo(width)
-            make.top.equalTo(scrollView.snp.top).offset(height * 0.642)
-            make.height.equalTo(height * 0.147)
-        }
-        
-        albumLabel.snp.makeConstraints{(make) in
-            make.left.equalTo(scrollView.snp.left)
-            make.width.equalTo(width * 0.224)
-            make.top.equalTo(albumView.snp.top)
-            make.bottom.equalTo(albumView.snp.bottom)
-        }
-        
-        albumFrame0.snp.makeConstraints{(make) in
-            make.top.equalTo(scrollView.snp.top).offset(height * 0.6585)
-            make.left.equalTo(signatureContentLabel!.snp.left)
-            make.width.equalTo(width / 5)
-            make.height.equalTo(height * 0.1125)
-        }
-        
-        albumFrame1.snp.makeConstraints{(make) in
-            make.top.equalTo(albumFrame0.snp.top)
-            make.left.equalTo(albumFrame0.snp.right).offset(width * 0.027)
-            make.height.equalTo(albumFrame0.snp.height)
-            make.width.equalTo(albumFrame0.snp.width)
-        }
-        
-        albumFrame2.snp.makeConstraints{(make) in
-            make.top.equalTo(albumFrame0.snp.top)
-            make.left.equalTo(albumFrame1.snp.right).offset(width * 0.027)
-            make.height.equalTo(albumFrame0.snp.height)
-            make.width.equalTo(albumFrame0.snp.width)
-        }
-        
-        albumArrow.snp.makeConstraints{(make) in
-            //make.right.equalTo(scrollView.snp.right).offset(-width * 0.032)
-            make.left.equalTo(scrollView.snp.left).offset(width * 0.92)
-            make.top.equalTo(scrollView.snp.top).offset(height * 0.7035)
-            make.width.equalTo(20)
-            make.height.equalTo(20)
-        }
-        
-        line1.snp.makeConstraints{(make) in
-            make.top.equalTo(scrollView.snp.top).offset(height * 0.798)
-            make.left.equalTo(signatureLabel.snp.right)
-            make.width.equalTo(width * 0.776)
-            make.height.equalTo(2)
-        }
-        
-        settingsButton.snp.makeConstraints{(make) in
-            make.top.equalTo(scrollView.snp.top).offset(height * 0.822)
-            make.centerX.equalTo(scrollView.snp.centerX)
-            make.width.equalTo(width * 0.9)
-            make.height.equalTo(height * 0.069)
-        }
+//        settingsButton.snp.makeConstraints{(make) in
+//            make.top.equalTo(scrollView.snp.top).offset(height * 0.822)
+//            make.centerX.equalTo(scrollView.snp.centerX)
+//            make.width.equalTo(width * 0.9)
+//            make.height.equalTo(height * 0.069)
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -322,34 +188,30 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate
         }
     }
     
-    func loadRecentThreePhotos() {
-
-
-        let url = URL(string: "\(APIurl)/album/recent")!
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        request.httpBody = "{\n  \"username\": \(user.username)\n}".data(using: .utf8)
-        
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            if let _ = response, let data = data {
-                let json = try! JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String: String]
-                let url1 = json["photo1"]!
-                let url2 = json["photo2"]!
-                let url3 = json["photo3"]!
-                self.albumFrame0.image = self.imageFromURL(url: URL(string: url1)!)
-                self.albumFrame1.image = self.imageFromURL(url: URL(string: url2)!)
-                self.albumFrame2.image = self.imageFromURL(url: URL(string: url3)!)
-                print(url1)
-            } else {
-                print(error!)
-            }
-        }
-        
-        task.resume()
- 
-    }
+//    func loadRecentThreePhotos() {
+//
+//
+//        let url = URL(string: "\(APIurl)/album/recent")!
+//        var request = URLRequest(url: url)
+//        request.httpMethod = "POST"
+//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+//
+//        request.httpBody = "{\n  \"username\": \(user.username)\n}".data(using: .utf8)
+//
+//        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+//            if let _ = response, let data = data {
+//                let json = try! JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String: String]
+//                let url1 = json["photo1"]!
+//                let url2 = json["photo2"]!
+//                let url3 = json["photo3"]!
+//            } else {
+//                print(error!)
+//            }
+//        }
+//
+//        task.resume()
+//
+//    }
     
     func imageFromURL(url: URL) -> UIImage?
     {
@@ -379,10 +241,6 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate
             if signatureView.frame.contains(loc)
             {
             }
-        }
-        if albumView.frame.contains(loc)
-        {
-            tappedAlbum()
         }
     }
     
@@ -457,17 +315,17 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate
         }
     }
     
-    @objc func holdingAlbum(sender: UILongPressGestureRecognizer)
-    {
-        if sender.state == .began
-        {
-            albumView.backgroundColor = ColorandFontTable.groundGray
-        }
-        else
-        {
-            albumView.backgroundColor = ColorandFontTable.transparent
-        }
-    }
+//    @objc func holdingAlbum(sender: UILongPressGestureRecognizer)
+//    {
+//        if sender.state == .began
+//        {
+//            albumView.backgroundColor = ColorandFontTable.groundGray
+//        }
+//        else
+//        {
+//            albumView.backgroundColor = ColorandFontTable.transparent
+//        }
+//    }
     @objc func backToLast()
     {
         let _ = self.navigationController?.popViewController(animated: true)

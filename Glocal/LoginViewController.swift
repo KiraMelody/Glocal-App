@@ -28,7 +28,6 @@ class LoginViewController: UIViewController {
 
         width = view.frame.width
         height = view.frame.height
-        print(width, height)
         
         logoImage = UIImageView()
         logoImage.image = UIImage(named: "global")
@@ -55,7 +54,7 @@ class LoginViewController: UIViewController {
         loginButton = UIButton(type: .roundedRect)
         loginButton.setTitle("Sign In", for: .normal)
         loginButton.titleLabel?.font = UIFont.systemFont(ofSize: 20)
-//        loginButton.addTarget(self, action: #selector(LoginViewController.login), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(LoginViewController.jumpToHomepage), for: .touchUpInside)
         loginButton.backgroundColor = ColorandFontTable.primaryGreen
         loginButton.setTitleColor(.white, for: .normal)
         loginButton.layer.cornerRadius = 15
@@ -87,8 +86,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         initialize()
         
-        self.title = "Log in"
-        
         self.view.addSubview(logoImage)
         self.view.addSubview(appLabel)
         self.view.addSubview(usernameField)
@@ -119,13 +116,13 @@ class LoginViewController: UIViewController {
             make.width.equalTo(self.view).multipliedBy(0.7)
         }
         passwordField.snp.makeConstraints { (make) in
-            make.top.equalTo(usernameField.snp.bottom).offset(20)
+            make.top.equalTo(usernameField.snp.bottom).offset(5)
             make.centerX.equalTo(self.view)
             make.height.equalTo(self.view).multipliedBy(0.1)
             make.width.equalTo(self.view.snp.width).multipliedBy(0.7)
         }
         loginButton.snp.makeConstraints { (make) in
-            make.bottom.equalTo(registerButton.snp.top).offset(-30)
+            make.bottom.equalTo(registerButton.snp.top).offset(-20)
             make.centerX.equalTo(self.view)
             make.width.equalTo(self.view.snp.width).multipliedBy(0.7)
         }
@@ -222,13 +219,13 @@ class LoginViewController: UIViewController {
         task.resume()
     }
     
-    func jumpToHomepage() {
-//        let avc = HomepageCollectionViewController()
-//        self.navigationController?.pushViewController(avc, animated: false)
+    @objc func jumpToHomepage() {
+        let avc = PostTableViewController()
+        self.navigationController?.pushViewController(avc, animated: false)
     }
     @objc func jumpToRegister() {
         let avc = RegisterViewController()
-        self.navigationController?.pushViewController(avc, animated: false)
+        self.navigationController?.pushViewController(avc, animated: true)
     }
 
 }
