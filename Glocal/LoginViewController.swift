@@ -10,12 +10,12 @@ import UIKit
 import SnapKit
 import TextFieldEffects
 import NGOSegmentControl
+import FAPanels
 
 class LoginViewController: UIViewController {
 
     var logoImage: UIImageView!
-    var appLabel: UILabel!
-    var segmentControl: NGOSegmentControl!
+//    var appLabel: UILabel!
     var usernameField: HoshiTextField!
     var passwordField: HoshiTextField!
     var loginButton: UIButton!
@@ -26,41 +26,39 @@ class LoginViewController: UIViewController {
     var instagramButton: UIImageView!
     var width, height: CGFloat!
     
+    var isUser: Bool!
+    
     func initialize() {
-
+        isUser = UserDefaults.standard.bool(forKey: "Login")
+        print("login ", isUser)
         width = view.frame.width
         height = view.frame.height
-        
+        print(isUser)
         logoImage = UIImageView()
-        logoImage.image = UIImage(named: "global")
+        if isUser {
+            logoImage.image = UIImage(named: "influencer")
+        } else {
+            logoImage.image = UIImage(named: "company")
+        }
         logoImage.contentMode = .scaleAspectFit
         
-        appLabel = UILabel()
-        appLabel.font = UIFont(name: "Helvetica-Bold", size: 28)
-        appLabel.text = "Glocal"
-        appLabel.textAlignment = .center
-        appLabel.textColor = ColorandFontTable.darkGray
-        
-        segmentControl = NGOSegmentControl()
-        segmentControl.backgroundColor = ColorandFontTable.primaryGreen
-        segmentControl.tintColor = ColorandFontTable.primaryGreen
-        segmentControl.selectedBackgroundColor = ColorandFontTable.midGreen
-//        segmentControl.buttonTitleColor = ColorandFontTable.primaryGreen
-        segmentControl.firstSegmentText = "Influencer"
-        segmentControl.secondSegmentText = "Company"
-        segmentControl.selectedButton = NGOSegmentControlSelected.left
+//        appLabel = UILabel()
+//        appLabel.font = UIFont(name: "Helvetica-Bold", size: 28)
+//        appLabel.text = "Glocal"
+//        appLabel.textAlignment = .center
+//        appLabel.textColor = ColorandFontTable.darkGray
         
         usernameField = HoshiTextField()
         usernameField.placeholder = "Username"
-        usernameField.borderInactiveColor = ColorandFontTable.borderGray
+        usernameField.borderInactiveColor = UIColor.white
         usernameField.borderActiveColor = ColorandFontTable.primaryGreen
-        usernameField.placeholderColor = ColorandFontTable.darkGray
+        usernameField.placeholderColor = UIColor.white
         
         passwordField = HoshiTextField()
         passwordField.placeholder = "Password"
-        passwordField.borderInactiveColor = ColorandFontTable.borderGray
+        passwordField.borderInactiveColor = UIColor.white
         passwordField.borderActiveColor = ColorandFontTable.primaryGreen
-        passwordField.placeholderColor = ColorandFontTable.darkGray
+        passwordField.placeholderColor = UIColor.white
         
         loginButton = UIButton(type: .roundedRect)
         loginButton.setTitle("Sign In", for: .normal)
@@ -71,14 +69,16 @@ class LoginViewController: UIViewController {
         loginButton.layer.cornerRadius = 15
         loginButton.clipsToBounds = true
         
-        registerButton = UIButton(type: .roundedRect)
-        registerButton.setTitle("Sign Up", for: .normal)
-        registerButton.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        registerButton = UIButton()
+        registerButton.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        registerButton.titleLabel?.textColor = UIColor.white
+        let str = NSMutableAttributedString(string: "Don't have an account? Sign Up")
+        let range = NSRange(location: 23, length: 7)
+        let number = NSNumber(value: NSUnderlineStyle.single.rawValue)
+        str.addAttribute(NSAttributedString.Key.underlineStyle, value: number, range: range)
+        str.addAttribute(NSAttributedString.Key.foregroundColor, value: ColorandFontTable.primaryGreen, range: range)
+        registerButton.setAttributedTitle(str, for: .normal)
         registerButton.addTarget(self, action: #selector(LoginViewController.jumpToRegister), for: .touchUpInside)
-        registerButton.backgroundColor = ColorandFontTable.primaryGreen
-        registerButton.setTitleColor(.white, for: .normal)
-        registerButton.layer.cornerRadius = 15
-        registerButton.clipsToBounds = true
         
         facebookButton = UIImageView()
         facebookButton.image = UIImage(named: "facebook")
@@ -98,8 +98,7 @@ class LoginViewController: UIViewController {
         initialize()
         
         self.view.addSubview(logoImage)
-        self.view.addSubview(appLabel)
-        self.view.addSubview(segmentControl)
+//        self.view.addSubview(appLabel)
         self.view.addSubview(usernameField)
         self.view.addSubview(passwordField)
         self.view.addSubview(loginButton)
@@ -109,27 +108,21 @@ class LoginViewController: UIViewController {
         self.view.addSubview(linkedinButton)
         self.view.addSubview(instagramButton)
         
-        let bgImage = UIImage(cgImage: UIImage(named: "wall")!.cgImage!, scale: 1000 / height, orientation: .up)
-        self.view.backgroundColor = UIColor(patternImage: bgImage)
+        let bgImage = UIImage(named: "background")
+        self.view.backgroundColor = UIColor(patternImage: bgImage!)
         
         logoImage.snp.makeConstraints { (make) in
-            make.top.equalTo(self.view).offset(100)
+            make.top.equalTo(self.view).offset(150)
             make.centerX.equalTo(self.view)
-            make.width.equalTo(self.view.snp.width).multipliedBy(0.4)
-            make.height.equalTo(self.view.snp.width).multipliedBy(0.4)
+            make.width.equalTo(self.view.snp.width).multipliedBy(0.8)
+//            make.height.equalTo(self.view.snp.width).multipliedBy(0.4)
         }
-        appLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(logoImage.snp.bottom).offset(10)
-            make.centerX.equalTo(self.view)
-        }
-        segmentControl.snp.makeConstraints { (make) in
-            make.top.equalTo(appLabel.snp.bottom).offset(20)
-            make.centerX.equalTo(self.view)
-            make.height.equalTo(self.view).multipliedBy(0.05)
-            make.width.equalTo(self.view).multipliedBy(0.8)
-        }
+//        appLabel.snp.makeConstraints { (make) in
+//            make.top.equalTo(logoImage.snp.bottom).offset(10)
+//            make.centerX.equalTo(self.view)
+//        }
         usernameField.snp.makeConstraints { (make) in
-            make.top.equalTo(segmentControl.snp.bottom)
+            make.top.equalTo(logoImage.snp.bottom).offset(50)
             make.centerX.equalTo(self.view)
             make.height.equalTo(self.view).multipliedBy(0.1)
             make.width.equalTo(self.view).multipliedBy(0.7)
@@ -174,6 +167,13 @@ class LoginViewController: UIViewController {
             make.width.equalTo(self.view.snp.width).multipliedBy(0.1)
             make.height.equalTo(self.view.snp.width).multipliedBy(0.1)
         }
+        
+        if !isUser {
+            facebookButton.isHidden = true
+            youtubeButton.isHidden = true
+            linkedinButton.isHidden = true
+            instagramButton.isHidden = true
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -182,10 +182,6 @@ class LoginViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
-//        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20),NSAttributedString.Key.foregroundColor: UIColor.white]
-//        self.navigationController?.navigationBar.backgroundColor = ColorandFontTable.primaryGreen
-//        self.navigationController?.navigationBar.barTintColor = ColorandFontTable.tintGreen
-//        self.navigationController?.navigationBar.tintColor = UIColor.white
     }
     
     
@@ -239,8 +235,8 @@ class LoginViewController: UIViewController {
     }
     
     @objc func jumpToHomepage() {
-        let avc = PostTableViewController()
-        self.navigationController?.pushViewController(avc, animated: false)
+        let avc = ProfileViewController()
+        self.navigationController?.pushViewController(avc, animated: true)
     }
     @objc func jumpToRegister() {
         let avc = RegisterViewController()

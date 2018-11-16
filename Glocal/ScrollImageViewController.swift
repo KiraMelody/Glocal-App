@@ -1,9 +1,9 @@
 //
 //  ScrollImageViewController.swift
-//  Pogether
+//  Glocal
 //
-//  Created by KiraMelody on 2017/2/21.
-//  Copyright © 2017年 KiraMelody. All rights reserved.
+//  Created by KiraMelody on 2018/11/2.
+//  Copyright © 2018年 KiraMelody. All rights reserved.
 //
 
 import UIKit

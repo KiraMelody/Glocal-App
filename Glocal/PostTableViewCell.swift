@@ -16,7 +16,18 @@ class PostTableViewCell: UITableViewCell {
     var industryLabel: UILabel!
     var priceLabel: UILabel!
     var countryLabel: UILabel!
-    var requirementLabel: UILabel!
+    var connectButton: UIButton!
+    
+    var post: Post? {
+        didSet {
+            portraitView.image = post?.icon
+            nameLabel.text = post?.name
+            descriptionLabel.text = post?.description
+            industryLabel.text = post?.industry
+            priceLabel.text = post?.price
+            countryLabel.text = post?.country
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -55,15 +66,19 @@ class PostTableViewCell: UITableViewCell {
         descriptionLabel = UILabel()
         descriptionLabel.text = "FakeCompany is a leading shoe brand in China."
         descriptionLabel.font = UIFont.systemFont(ofSize: 10)
+        descriptionLabel.numberOfLines = 0
         
         priceLabel = UILabel()
         priceLabel.text = "$100 / post"
         priceLabel.font = UIFont.systemFont(ofSize: 15)
         priceLabel.textColor = ColorandFontTable.primaryGreen
         
-        requirementLabel = UILabel()
-        requirementLabel.text = "80 / 100"
-        requirementLabel.font = UIFont.systemFont(ofSize: 10)
+        connectButton = UIButton(type: .roundedRect)
+        connectButton.setTitleColor(UIColor.white, for: .normal)
+        connectButton.backgroundColor = ColorandFontTable.primaryGreen
+        connectButton.setTitle("Connect", for: .normal)
+        connectButton.layer.masksToBounds = true
+        connectButton.layer.cornerRadius = 5
         
         contentView.addSubview(portraitView)
         contentView.addSubview(nameLabel)
@@ -71,37 +86,41 @@ class PostTableViewCell: UITableViewCell {
         contentView.addSubview(countryLabel)
         contentView.addSubview(priceLabel)
         contentView.addSubview(descriptionLabel)
-        contentView.addSubview(requirementLabel)
+        contentView.addSubview(connectButton)
         
         portraitView.snp.makeConstraints { (make) in
             make.left.equalTo(contentView).offset(10)
-            make.width.equalTo(36)
-            make.height.equalTo(36)
+            make.width.equalTo(64)
+            make.height.equalTo(64)
             make.centerY.equalTo(contentView)
         }
         nameLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(portraitView.snp.right).offset(10)
+            make.left.equalTo(portraitView.snp.right).offset(15)
             make.top.equalTo(contentView).offset(10)
         }
         industryLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(portraitView.snp.right).offset(10)
+            make.left.equalTo(portraitView.snp.right).offset(15)
             make.top.equalTo(nameLabel.snp.bottom).offset(5)
         }
         countryLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(industryLabel.snp.right).offset(10)
+            make.left.equalTo(industryLabel.snp.right).offset(15)
             make.top.equalTo(nameLabel.snp.bottom).offset(5)
         }
         descriptionLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(portraitView.snp.right).offset(10)
+            make.left.equalTo(portraitView.snp.right).offset(15)
             make.top.equalTo(industryLabel.snp.bottom).offset(5)
+            make.right.equalTo(contentView).offset(-15)
         }
         priceLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(portraitView.snp.right).offset(10)
+            make.left.equalTo(portraitView.snp.right).offset(15)
             make.top.equalTo(descriptionLabel.snp.bottom).offset(5)
+            make.bottom.equalTo(contentView).offset(-10)
         }
-        requirementLabel.snp.makeConstraints { (make) in
-            make.right.equalTo(contentView).offset(-30)
+        connectButton.snp.makeConstraints { (make) in
+            make.right.equalTo(contentView).offset(-15)
             make.bottom.equalTo(priceLabel)
+            make.height.equalTo(20)
+            make.width.equalTo(contentView).multipliedBy(0.3)
         }
     }
     

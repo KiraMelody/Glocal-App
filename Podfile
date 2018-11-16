@@ -11,6 +11,11 @@ target 'Glocal' do
   pod 'SDWebImage'
   pod 'TextFieldEffects'
   pod 'NGOSegmentControl'
+  pod 'PageMenu'
+  pod 'MGSwipeTableCell'
+  pod 'KMPlaceholderTextView'
+  pod 'FAPanels'
+  pod 'GrowingTextView', '0.6.1'
 
   # Pods for Glocal
 

@@ -1,7 +1,12 @@
 PODS:
   - Alamofire (4.7.3)
+  - FAPanels (1.0.2)
+  - GrowingTextView (0.6.1)
+  - KMPlaceholderTextView (1.4.0)
   - MGDrawingSlate (0.0.1)
+  - MGSwipeTableCell (1.6.7)
   - NGOSegmentControl (1.0.1)
+  - PageMenu (2.0.0)
   - PKHUD (5.2.0)
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
@@ -11,8 +16,13 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - FAPanels
+  - GrowingTextView (= 0.6.1)
+  - KMPlaceholderTextView
   - MGDrawingSlate
+  - MGSwipeTableCell
   - NGOSegmentControl
+  - PageMenu
   - PKHUD
   - SDWebImage
   - SnapKit
@@ -21,8 +31,13 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - FAPanels
+    - GrowingTextView
+    - KMPlaceholderTextView
     - MGDrawingSlate
+    - MGSwipeTableCell
     - NGOSegmentControl
+    - PageMenu
     - PKHUD
     - SDWebImage
     - SnapKit
@@ -30,13 +45,18 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  FAPanels: 520037c53f4ded152e8e6103d97f79b644473363
+  GrowingTextView: 335aefa45df7df06b01edede1363414d6ee5d6bc
+  KMPlaceholderTextView: 2206c3df39979e9396e2d96fa9f427a8951121b0
   MGDrawingSlate: a7e2ff0546613c17549cb989ca030bff2ca93704
+  MGSwipeTableCell: fb20e983988bde2b8d0df29c2d9e1d8ffd10b74a
   NGOSegmentControl: 50c936043e9d2df6ba8fc9a332f9737febb8fd03
+  PageMenu: 9c38fd7e0d9ef4b1408320f55bb907bbc0e538dc
   PKHUD: dd5357ac65f26115c35c4a68e9b328053326c5fe
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   TextFieldEffects: 7d372f58aeaf9acd9626bbf962680aef926b085d
 
-PODFILE CHECKSUM: 7632f38a6b084125ba5e58c4d732654b87e40447
+PODFILE CHECKSUM: ab979bf54a49d1d34fcaddd5e0a2d44de530d083
 
 COCOAPODS: 1.6.0.beta.2

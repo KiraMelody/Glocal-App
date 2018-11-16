@@ -1,9 +1,9 @@
 //
 //  Global.swift
-//  Pogether
+//  Glocal
 //
-//  Created by KiraMelody on 2017/3/8.
-//  Copyright © 2017年 KiraMelody. All rights reserved.
+//  Created by KiraMelody on 2018/10/28.
+//  Copyright © 2018年 KiraMelody. All rights reserved.
 //
 
 import Foundation

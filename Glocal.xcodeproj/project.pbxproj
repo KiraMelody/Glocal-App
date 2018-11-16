@@ -10,17 +10,30 @@
 		352676962187E3490031A54A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352676952187E3490031A54A /* AppDelegate.swift */; };
 		3526769D2187E34A0031A54A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3526769C2187E34A0031A54A /* Assets.xcassets */; };
 		352676C42187E5E30031A54A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 352676C32187E5E20031A54A /* LaunchScreen.storyboard */; };
-		352676CD2187E7480031A54A /* ContactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352676C52187E7480031A54A /* ContactTableViewController.swift */; };
 		352676CE2187E7480031A54A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352676C62187E7480031A54A /* ProfileViewController.swift */; };
 		352676CF2187E7480031A54A /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352676C72187E7480031A54A /* Global.swift */; };
 		352676D02187E7480031A54A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352676C82187E7480031A54A /* LoginViewController.swift */; };
-		352676D12187E7480031A54A /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352676C92187E7480031A54A /* ContactTableViewCell.swift */; };
 		352676D22187E7480031A54A /* ScrollImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352676CA2187E7480031A54A /* ScrollImageViewController.swift */; };
 		352676D32187E7480031A54A /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352676CB2187E7480031A54A /* Account.swift */; };
 		352676D42187E7480031A54A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352676CC2187E7480031A54A /* RegisterViewController.swift */; };
 		352676D62187F7C40031A54A /* ColorandFontTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352676D52187F7C40031A54A /* ColorandFontTable.swift */; };
+		35812C4A219CD776001AC437 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35812C49219CD776001AC437 /* InfoTableViewController.swift */; };
+		35812C4C219CD7B0001AC437 /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35812C4B219CD7B0001AC437 /* InfoTableViewCell.swift */; };
+		35812C4E219CE697001AC437 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35812C4D219CE697001AC437 /* MessageTableViewCell.swift */; };
+		35812C50219CE6BC001AC437 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35812C4F219CE6BC001AC437 /* MessageTableViewController.swift */; };
+		35812C52219CF056001AC437 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35812C51219CF056001AC437 /* ConnectViewController.swift */; };
+		35812C54219D13B9001AC437 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35812C53219D13B9001AC437 /* MenuTableViewController.swift */; };
+		35812C56219D13CB001AC437 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35812C55219D13CB001AC437 /* MenuTableViewCell.swift */; };
+		35812C58219D2E5F001AC437 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35812C57219D2E5F001AC437 /* ChatViewController.swift */; };
+		35812C5A219D4026001AC437 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35812C59219D4026001AC437 /* EntryViewController.swift */; };
+		35812C5C219E0604001AC437 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35812C5B219E0604001AC437 /* SearchViewController.swift */; };
+		35812C5E219E9336001AC437 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35812C5D219E9336001AC437 /* Post.swift */; };
+		35812C60219E9693001AC437 /* ResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35812C5F219E9693001AC437 /* ResultTableViewController.swift */; };
+		35812C62219E96A7001AC437 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35812C61219E96A7001AC437 /* ResultTableViewCell.swift */; };
+		35812C64219E9700001AC437 /* Influencer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35812C63219E9700001AC437 /* Influencer.swift */; };
 		358877C1219152AE0074766A /* PostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358877C0219152AE0074766A /* PostTableViewController.swift */; };
 		358877C3219152C60074766A /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358877C2219152C60074766A /* PostTableViewCell.swift */; };
+		358877C521922E360074766A /* PagingMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358877C421922E360074766A /* PagingMenuViewController.swift */; };
 		85F42DC66B69E0EA63C5D72B /* Pods_Glocal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE946E268F16FA53C4E43868 /* Pods_Glocal.framework */; };
 		EF15A5BB528EF946C3597F0A /* Pods_GlocalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB133F0C1E466383D3D6C8C0 /* Pods_GlocalUITests.framework */; };
 		FEB19815F28EB39B5FF260C1 /* Pods_GlocalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39C429E685788BF6A605BA9D /* Pods_GlocalTests.framework */; };
@@ -52,17 +65,30 @@
 		352676A62187E34A0031A54A /* GlocalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlocalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		352676B12187E34A0031A54A /* GlocalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlocalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		352676C32187E5E20031A54A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		352676C52187E7480031A54A /* ContactTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewController.swift; sourceTree = "<group>"; };
 		352676C62187E7480031A54A /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		352676C72187E7480031A54A /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		352676C82187E7480031A54A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		352676C92187E7480031A54A /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		352676CA2187E7480031A54A /* ScrollImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollImageViewController.swift; sourceTree = "<group>"; };
 		352676CB2187E7480031A54A /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		352676CC2187E7480031A54A /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		352676D52187F7C40031A54A /* ColorandFontTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorandFontTable.swift; sourceTree = "<group>"; };
+		35812C49219CD776001AC437 /* InfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
+		35812C4B219CD7B0001AC437 /* InfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
+		35812C4D219CE697001AC437 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		35812C4F219CE6BC001AC437 /* MessageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
+		35812C51219CF056001AC437 /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
+		35812C53219D13B9001AC437 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		35812C55219D13CB001AC437 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		35812C57219D2E5F001AC437 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		35812C59219D4026001AC437 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		35812C5B219E0604001AC437 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		35812C5D219E9336001AC437 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		35812C5F219E9693001AC437 /* ResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewController.swift; sourceTree = "<group>"; };
+		35812C61219E96A7001AC437 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
+		35812C63219E9700001AC437 /* Influencer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Influencer.swift; sourceTree = "<group>"; };
 		358877C0219152AE0074766A /* PostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewController.swift; sourceTree = "<group>"; };
 		358877C2219152C60074766A /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		358877C421922E360074766A /* PagingMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingMenuViewController.swift; sourceTree = "<group>"; };
 		39C429E685788BF6A605BA9D /* Pods_GlocalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GlocalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47B39C9B13B856E6B93648BE /* Pods-Glocal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Glocal.debug.xcconfig"; path = "Target Support Files/Pods-Glocal/Pods-Glocal.debug.xcconfig"; sourceTree = "<group>"; };
 		66D2D99DB08DD7B1C8C28A26 /* Pods-GlocalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlocalUITests.debug.xcconfig"; path = "Target Support Files/Pods-GlocalUITests/Pods-GlocalUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,21 +150,34 @@
 		352676942187E3490031A54A /* Glocal */ = {
 			isa = PBXGroup;
 			children = (
-				352676D52187F7C40031A54A /* ColorandFontTable.swift */,
-				358877C0219152AE0074766A /* PostTableViewController.swift */,
-				358877C2219152C60074766A /* PostTableViewCell.swift */,
 				352676CB2187E7480031A54A /* Account.swift */,
-				352676C92187E7480031A54A /* ContactTableViewCell.swift */,
-				352676C52187E7480031A54A /* ContactTableViewController.swift */,
-				352676C72187E7480031A54A /* Global.swift */,
-				352676C82187E7480031A54A /* LoginViewController.swift */,
-				352676C62187E7480031A54A /* ProfileViewController.swift */,
-				352676CC2187E7480031A54A /* RegisterViewController.swift */,
-				352676CA2187E7480031A54A /* ScrollImageViewController.swift */,
-				352676C32187E5E20031A54A /* LaunchScreen.storyboard */,
+				35812C63219E9700001AC437 /* Influencer.swift */,
 				352676952187E3490031A54A /* AppDelegate.swift */,
 				3526769C2187E34A0031A54A /* Assets.xcassets */,
+				35812C57219D2E5F001AC437 /* ChatViewController.swift */,
+				352676D52187F7C40031A54A /* ColorandFontTable.swift */,
+				35812C51219CF056001AC437 /* ConnectViewController.swift */,
+				35812C59219D4026001AC437 /* EntryViewController.swift */,
+				352676C72187E7480031A54A /* Global.swift */,
 				352676A12187E34A0031A54A /* Info.plist */,
+				35812C4B219CD7B0001AC437 /* InfoTableViewCell.swift */,
+				35812C49219CD776001AC437 /* InfoTableViewController.swift */,
+				352676C32187E5E20031A54A /* LaunchScreen.storyboard */,
+				352676C82187E7480031A54A /* LoginViewController.swift */,
+				35812C55219D13CB001AC437 /* MenuTableViewCell.swift */,
+				35812C53219D13B9001AC437 /* MenuTableViewController.swift */,
+				35812C4D219CE697001AC437 /* MessageTableViewCell.swift */,
+				35812C4F219CE6BC001AC437 /* MessageTableViewController.swift */,
+				358877C421922E360074766A /* PagingMenuViewController.swift */,
+				35812C5D219E9336001AC437 /* Post.swift */,
+				358877C2219152C60074766A /* PostTableViewCell.swift */,
+				358877C0219152AE0074766A /* PostTableViewController.swift */,
+				352676C62187E7480031A54A /* ProfileViewController.swift */,
+				352676CC2187E7480031A54A /* RegisterViewController.swift */,
+				35812C61219E96A7001AC437 /* ResultTableViewCell.swift */,
+				35812C5F219E9693001AC437 /* ResultTableViewController.swift */,
+				352676CA2187E7480031A54A /* ScrollImageViewController.swift */,
+				35812C5B219E0604001AC437 /* SearchViewController.swift */,
 			);
 			path = Glocal;
 			sourceTree = "<group>";
@@ -372,9 +411,14 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Glocal/Pods-Glocal-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FAPanels/FAPanels.framework",
+				"${BUILT_PRODUCTS_DIR}/GrowingTextView/GrowingTextView.framework",
+				"${BUILT_PRODUCTS_DIR}/KMPlaceholderTextView/KMPlaceholderTextView.framework",
 				"${BUILT_PRODUCTS_DIR}/MGDrawingSlate/MGDrawingSlate.framework",
+				"${BUILT_PRODUCTS_DIR}/MGSwipeTableCell/MGSwipeTableCell.framework",
 				"${BUILT_PRODUCTS_DIR}/NGOSegmentControl/NGOSegmentControl.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/PageMenu/PageMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
@@ -384,9 +428,14 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FAPanels.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GrowingTextView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KMPlaceholderTextView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGDrawingSlate.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGSwipeTableCell.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NGOSegmentControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PageMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
@@ -403,18 +452,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35812C4C219CD7B0001AC437 /* InfoTableViewCell.swift in Sources */,
+				35812C5E219E9336001AC437 /* Post.swift in Sources */,
+				35812C5A219D4026001AC437 /* EntryViewController.swift in Sources */,
+				35812C60219E9693001AC437 /* ResultTableViewController.swift in Sources */,
 				352676D02187E7480031A54A /* LoginViewController.swift in Sources */,
 				352676D42187E7480031A54A /* RegisterViewController.swift in Sources */,
+				35812C64219E9700001AC437 /* Influencer.swift in Sources */,
 				352676962187E3490031A54A /* AppDelegate.swift in Sources */,
+				35812C4A219CD776001AC437 /* InfoTableViewController.swift in Sources */,
 				352676D22187E7480031A54A /* ScrollImageViewController.swift in Sources */,
 				352676CE2187E7480031A54A /* ProfileViewController.swift in Sources */,
+				35812C50219CE6BC001AC437 /* MessageTableViewController.swift in Sources */,
+				35812C4E219CE697001AC437 /* MessageTableViewCell.swift in Sources */,
 				352676D32187E7480031A54A /* Account.swift in Sources */,
-				352676D12187E7480031A54A /* ContactTableViewCell.swift in Sources */,
+				358877C521922E360074766A /* PagingMenuViewController.swift in Sources */,
+				35812C58219D2E5F001AC437 /* ChatViewController.swift in Sources */,
+				35812C54219D13B9001AC437 /* MenuTableViewController.swift in Sources */,
 				352676D62187F7C40031A54A /* ColorandFontTable.swift in Sources */,
+				35812C5C219E0604001AC437 /* SearchViewController.swift in Sources */,
 				358877C1219152AE0074766A /* PostTableViewController.swift in Sources */,
+				35812C56219D13CB001AC437 /* MenuTableViewCell.swift in Sources */,
 				352676CF2187E7480031A54A /* Global.swift in Sources */,
-				352676CD2187E7480031A54A /* ContactTableViewController.swift in Sources */,
 				358877C3219152C60074766A /* PostTableViewCell.swift in Sources */,
+				35812C62219E96A7001AC437 /* ResultTableViewCell.swift in Sources */,
+				35812C52219CF056001AC437 /* ConnectViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,7 +634,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64VC6J8U2G;
 				INFOPLIST_FILE = Glocal/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -592,7 +654,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64VC6J8U2G;
 				INFOPLIST_FILE = Glocal/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

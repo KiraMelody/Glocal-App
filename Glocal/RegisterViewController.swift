@@ -30,7 +30,6 @@ class RegisterViewController: UIViewController {
         
         width = view.frame.width
         height = view.frame.height
-        print(width, height)
         
         var back = UIImage(named: "back")
         back = back?.withRenderingMode(.alwaysOriginal)
@@ -50,27 +49,27 @@ class RegisterViewController: UIViewController {
         
         usernameField = HoshiTextField()
         usernameField.placeholder = "Username"
-        usernameField.borderInactiveColor = ColorandFontTable.borderGray
+        usernameField.borderInactiveColor = UIColor.white
         usernameField.borderActiveColor = ColorandFontTable.primaryGreen
-        usernameField.placeholderColor = ColorandFontTable.darkGray
+        usernameField.placeholderColor = UIColor.white
         
         emailField = HoshiTextField()
         emailField.placeholder = "Email"
-        emailField.borderInactiveColor = ColorandFontTable.borderGray
+        emailField.borderInactiveColor = UIColor.white
         emailField.borderActiveColor = ColorandFontTable.primaryGreen
-        emailField.placeholderColor = ColorandFontTable.darkGray
+        emailField.placeholderColor = UIColor.white
         
         passwordField = HoshiTextField()
         passwordField.placeholder = "Password"
-        passwordField.borderInactiveColor = ColorandFontTable.borderGray
+        passwordField.borderInactiveColor = UIColor.white
         passwordField.borderActiveColor = ColorandFontTable.primaryGreen
-        passwordField.placeholderColor = ColorandFontTable.darkGray
+        passwordField.placeholderColor = UIColor.white
         
         conpasswordField = HoshiTextField()
         conpasswordField.placeholder = "Confirmed Password"
-        conpasswordField.borderInactiveColor = ColorandFontTable.borderGray
+        conpasswordField.borderInactiveColor = UIColor.white
         conpasswordField.borderActiveColor = ColorandFontTable.primaryGreen
-        conpasswordField.placeholderColor = ColorandFontTable.darkGray
+        conpasswordField.placeholderColor = UIColor.white
         
         registerButton = UIButton(type: .roundedRect)
         registerButton.setTitle("Sign Up", for: .normal)
@@ -111,8 +110,8 @@ class RegisterViewController: UIViewController {
 //        self.view.addSubview(linkedinButton)
 //        self.view.addSubview(instagramButton)
         
-        let bgImage = UIImage(cgImage: UIImage(named: "wall")!.cgImage!, scale: 1000 / height, orientation: .up)
-        self.view.backgroundColor = UIColor(patternImage: bgImage)
+        let bgImage = UIImage(named: "background")
+        self.view.backgroundColor = UIColor(patternImage: bgImage!)
         
         backButton.snp.makeConstraints{(make) in
             make.left.equalTo(view).offset(20)
@@ -182,12 +181,6 @@ class RegisterViewController: UIViewController {
 //            make.width.equalTo(self.view.snp.width).multipliedBy(0.1)
 //            make.height.equalTo(self.view.snp.width).multipliedBy(0.1)
 //        }
-    }
-    
-    func makeGroundImageView(groundImage:UIImage!) -> UIImageView {
-        let newUIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: height * 0.4875, height: height * 0.09))
-        newUIImageView.image = groundImage
-        return newUIImageView
     }
 
     override func viewWillAppear(_ animated: Bool) {

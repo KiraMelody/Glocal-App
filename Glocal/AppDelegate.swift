@@ -1,12 +1,13 @@
 //
 //  AppDelegate.swift
-//  LoginKit
+//  GLocal
 //
-//  Created by Daniel Lozano on 12/12/2016.
-//  Copyright (c) 2016 Daniel Lozano. All rights reserved.
+//  Created by Daniel Lozano on 10/30/2018.
+//  Copyright (c) 2018 KiraMelody. All rights reserved.
 //
 
 import UIKit
+import FAPanels
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,9 +19,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         window = UIWindow.init(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        let mainView = LoginViewController()
-        let navigationController = UINavigationController(rootViewController: mainView)
-        window?.rootViewController = navigationController
+        let rootController = FAPanelController()
+        rootController.leftPanelPosition = .front
+        rootController.leftPanelPosition = .back
+        rootController.configs.leftPanelWidth = 200
+        rootController.configs.bounceOnRightPanelOpen = false
+        rootController.configs.centerPanelTransitionType = .moveLeft
+        //        rootController.configs.bounceOnCenterPanelChange = false
+        let centerVC = EntryViewController()
+        let leftVC = MenuTableViewController()
+        let centerNavVC = UINavigationController(rootViewController: centerVC)
+        leftVC.parentNavigationController = centerNavVC
+        _ = rootController.center(centerNavVC).left(leftVC)
+        window?.rootViewController = rootController
         return true
     }
 
